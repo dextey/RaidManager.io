@@ -1,6 +1,7 @@
 
 using DatingV2.API.Models;
 using Microsoft.EntityFrameworkCore;
+using RaidManager.API.Models;
 
 namespace DatingV2.API.Data
 
@@ -10,5 +11,7 @@ namespace DatingV2.API.Data
         public DataContext(DbContextOptions<DataContext> options) : base(options){}    
         
         public DbSet<Value> Values { get; set; }
+
+        public DbSet<User> Users { get; set;}
     }
 }
