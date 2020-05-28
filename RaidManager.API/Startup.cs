@@ -12,6 +12,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
+using RaidManager.API.Interfaces;
+using RaidManager.API.Repositories;
 
 namespace DatingV2.API
 {
@@ -30,6 +32,7 @@ namespace DatingV2.API
             services.AddDbContext<DataContext>(connString => connString.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddControllers();
             services.AddCors();
+            services.AddScoped<IAuthRepository, AuthRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
