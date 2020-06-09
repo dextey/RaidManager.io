@@ -1,5 +1,11 @@
+using System;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
+using Microsoft.IdentityModel.Tokens;
 using RaidManager.API.DataTransferObjects;
 using RaidManager.API.Interfaces;
 using RaidManager.API.Models;
@@ -11,10 +17,12 @@ namespace RaidManager.API.Controllers
     public class AuthController : ControllerBase
     {
         private readonly IAuthRepository _authRepository;
+        private readonly IConfiguration _config;
 
-        public AuthController(IAuthRepository authRepository)
+        public AuthController(IAuthRepository authRepository, IConfiguration config)
         {
-            _authRepository = authRepository;
+            _authRepository = authRepository; 
+            _config = config;
         }
 
         [HttpPost("register")]
@@ -37,6 +45,31 @@ namespace RaidManager.API.Controllers
             var createdUser = await _authRepository.RegisterUser(userToCreate, userForRegister.password);
 
             return StatusCode(201);
+        }
+
+        [HttpPost("login")]
+        public async Task<IActionResult> Login(UserForLoginDTO userForLogin)
+        {
+            var userFromRepo = await _authRepository.Login(userForLogin.Username, userForLogin.Password);
+
+            if(userFromRepo == null)
+            {
+                return Unauthorized();
+            }
+
+            var claims = new[]
+            {
+                new Claim(ClaimTypes.NameIdentifier, userFromRepo.Id.ToString()),
+                new Claim(ClaimTypes.Name, userFromRepo.Username)
+            };
+
+            var tokenHandler = new JwtSecurityTokenHandler();
+            
+            var token = _authRepository.CreateTokenFromClaims(claims, _config.GetSection("AppSettings:Token").Value, tokenHandler);
+
+            return Ok(new {
+                token = tokenHandler.WriteToken(token)
+            });
         }
     }
 }

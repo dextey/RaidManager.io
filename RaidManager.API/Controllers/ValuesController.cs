@@ -6,9 +6,11 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using DatingV2.API.Data;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
 
 namespace DatingV2.API.Controllers
-{
+{   
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class ValuesController : ControllerBase
@@ -21,6 +23,8 @@ namespace DatingV2.API.Controllers
             _context = context;
 
         }
+
+
         [HttpGet]
         public async Task<IActionResult> GetValues()
         {
@@ -28,6 +32,7 @@ namespace DatingV2.API.Controllers
             return Ok(values);
         }
 
+        [AllowAnonymous]
         [HttpGet("{id}")]
         public async Task<IActionResult> GetValue(int id)
         {
