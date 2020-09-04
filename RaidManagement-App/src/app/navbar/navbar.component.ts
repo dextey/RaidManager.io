@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
+  model: any = {};
+
   constructor() { }
 
   ngOnInit() {
   }
 
+  login() {
+    console.log(this.model);
+  }
 }
