@@ -24,7 +24,7 @@ namespace DatingV2.API.Controllers
 
         }
 
-
+        [AllowAnonymous]
         [HttpGet]
         public async Task<IActionResult> GetValues()
         {
