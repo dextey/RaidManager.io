@@ -11,13 +11,17 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RaidOneComponent } from './raid-one/raid-one.component';
+import { GuildComponent } from './guild/guild.component';
 
 @NgModule({
-   declarations: [
+   declarations: [		
       AppComponent,
       NavbarComponent,
       HomeComponent,
-      RegisterComponent
+      RegisterComponent,
+      RaidOneComponent,
+      GuildComponent
    ],
    imports: [
       BrowserModule,
