@@ -5,6 +5,7 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -13,9 +14,10 @@ import { RegisterComponent } from './register/register.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RaidOneComponent } from './raid-one/raid-one.component';
 import { GuildComponent } from './guild/guild.component';
+import { appRoutes } from './routes';
 
 @NgModule({
-   declarations: [		
+   declarations: [
       AppComponent,
       NavbarComponent,
       HomeComponent,
@@ -28,7 +30,8 @@ import { GuildComponent } from './guild/guild.component';
       HttpClientModule,
       FormsModule,
       BrowserAnimationsModule,
-      BsDropdownModule.forRoot()
+      BsDropdownModule.forRoot(),
+      RouterModule.forRoot(appRoutes)
    ],
    providers: [
       AuthService,
