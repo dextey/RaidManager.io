@@ -15,15 +15,17 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RaidOneComponent } from './raid-one/raid-one.component';
 import { GuildComponent } from './guild/guild.component';
 import { appRoutes } from './routes';
+import { SelfCharacterComponent } from './self-character/self-character.component';
 
 @NgModule({
-   declarations: [
+   declarations: [	
       AppComponent,
       NavbarComponent,
       HomeComponent,
       RegisterComponent,
       RaidOneComponent,
-      GuildComponent
+      GuildComponent,
+      SelfCharacterComponent
    ],
    imports: [
       BrowserModule,
