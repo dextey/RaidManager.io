@@ -13,7 +13,7 @@ import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RaidOneComponent } from './raid-one/raid-one.component';
-import { GuildComponent } from './guild/guild.component';
+import { RosterComponent } from './roster/roster.component';
 import { appRoutes } from './routes';
 import { SelfCharacterComponent } from './self-character/self-character.component';
 
@@ -24,7 +24,7 @@ import { SelfCharacterComponent } from './self-character/self-character.componen
       HomeComponent,
       RegisterComponent,
       RaidOneComponent,
-      GuildComponent,
+      RosterComponent,
       SelfCharacterComponent
    ],
    imports: [
