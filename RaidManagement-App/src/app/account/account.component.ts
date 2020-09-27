@@ -2,11 +2,11 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-self-character',
-  templateUrl: './self-character.component.html',
-  styleUrls: ['./self-character.component.css']
+  selector: 'app-account',
+  templateUrl: './account.component.html',
+  styleUrls: ['./account.component.css']
 })
-export class SelfCharacterComponent implements OnInit {
+export class AccountComponent implements OnInit {
 
   mainChar: any;
   requestUrl: string;

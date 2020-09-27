@@ -15,7 +15,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RaidOneComponent } from './raid-one/raid-one.component';
 import { RosterComponent } from './roster/roster.component';
 import { appRoutes } from './routes';
-import { SelfCharacterComponent } from './self-character/self-character.component';
+import { AccountComponent } from './account/account.component';
 
 @NgModule({
    declarations: [	
@@ -25,7 +25,7 @@ import { SelfCharacterComponent } from './self-character/self-character.componen
       RegisterComponent,
       RaidOneComponent,
       RosterComponent,
-      SelfCharacterComponent
+      AccountComponent
    ],
    imports: [
       BrowserModule,
