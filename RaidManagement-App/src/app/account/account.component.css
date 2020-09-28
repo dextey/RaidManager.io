@@ -1,8 +1,14 @@
 .wrapper {
-    height: 100vh;
-    width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
 
 .class-paladin {
-    color: #F58CBA;
+  color: #f58cba;
+}
+
+.bgwaves {
+    flex-grow: 1;
+    position: relative;
 }
