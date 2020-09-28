@@ -16,16 +16,20 @@ import { RaidOneComponent } from './raid-one/raid-one.component';
 import { RosterComponent } from './roster/roster.component';
 import { appRoutes } from './routes';
 import { AccountComponent } from './account/account.component';
+import { FooterComponent } from './footer/footer.component';
+import { BackgroundComponent } from './background/background.component';
 
 @NgModule({
-   declarations: [	
+   declarations: [			
       AppComponent,
       NavbarComponent,
       HomeComponent,
       RegisterComponent,
       RaidOneComponent,
       RosterComponent,
-      AccountComponent
+      AccountComponent,
+      FooterComponent,
+      BackgroundComponent
    ],
    imports: [
       BrowserModule,
