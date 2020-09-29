@@ -1,14 +1,14 @@
-.wrapper {
+.account-wrapper {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .class-paladin {
   color: #f58cba;
 }
 
-.bgwaves {
+.bg-waves {
     flex-grow: 1;
     position: relative;
 }

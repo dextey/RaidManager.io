@@ -1,0 +1,8 @@
+.raid-wrapper {
+    min-height: 100vh;
+}
+
+.bg-waves {
+    flex-grow: 1;
+    position: relative;
+}
