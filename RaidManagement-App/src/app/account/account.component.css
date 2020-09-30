@@ -1,14 +1,7 @@
 .account-wrapper {
-  display: flex;
-  flex-direction: column;
   min-height: 100vh;
 }
 
 .class-paladin {
   color: #f58cba;
-}
-
-.bg-waves {
-    flex-grow: 1;
-    position: relative;
 }
