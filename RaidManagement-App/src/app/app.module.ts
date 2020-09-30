@@ -18,9 +18,10 @@ import { appRoutes } from './routes';
 import { AccountComponent } from './account/account.component';
 import { FooterComponent } from './footer/footer.component';
 import { BackgroundComponent } from './background/background.component';
+import { SearchComponent } from './search/search.component';
 
 @NgModule({
-   declarations: [			
+   declarations: [				
       AppComponent,
       NavbarComponent,
       HomeComponent,
@@ -29,7 +30,8 @@ import { BackgroundComponent } from './background/background.component';
       RosterComponent,
       AccountComponent,
       FooterComponent,
-      BackgroundComponent
+      BackgroundComponent,
+      SearchComponent
    ],
    imports: [
       BrowserModule,
