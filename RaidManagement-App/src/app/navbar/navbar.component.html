@@ -18,6 +18,9 @@
       <li class="nav-item" routerLinkActive="active">
         <a class="nav-link ml-3" [routerLink]="['/account']"  tabindex="-1" aria-disabled="true">Account</a>
       </li>
+      <li class="nav-item ml-3">
+        <app-search></app-search>
+      </li>
     </ul>
 
     <div *ngIf="loggedIn()" class="dropdown" dropdown>
@@ -27,7 +30,6 @@
     
       <div class="dropdown-menu mt-3" *dropdownMenu>
         <a class="dropdown-item" href="#"><i class="fa fa-user"></i>Edit profile</a>
-        <a class="dropdown-item" href="#">Another action</a>
         <a class="dropdown-item" (click)="logOut()" ><i class="fa fa-sign-out"></i>Logout</a>
       </div>
     </div>
