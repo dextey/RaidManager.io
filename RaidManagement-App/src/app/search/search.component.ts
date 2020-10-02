@@ -7,9 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchComponent implements OnInit {
 
+  characterNameRealm: string;
+  requestCharBaseUrl = 'https://raider.io/api/v1/characters/profile';
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  searchForCharacter(characterNameAndRealm: string) {
+
+  }
+
+  onEnterClick(event: any) {
+    this.characterNameRealm = event.target.value;
   }
 
 }
