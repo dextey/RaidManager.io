@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { SearchService } from './../services/search.service';
 import { Character } from './../_models/character.model';
 import { Component, OnInit } from '@angular/core';
 import { map } from 'rxjs/operators';
@@ -11,44 +11,20 @@ import { NavigationExtras } from '@angular/router';
   styleUrls: ['./search.component.scss'],
 })
 export class SearchComponent implements OnInit {
-  searchInput: string;
   searchedCharacter: any;
-  requestCharBaseUrl = 'https://raider.io/api/v1/characters/profile';
 
   constructor(
-    private http: HttpClient,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private search: SearchService
   ) {}
 
   ngOnInit() {}
 
-  getCharacterInfo(event: any) {
-    this.searchInput = event.target.value;
-    let requestUrl: string;
-    let characterName: string;
-    let realmName: string;
-
-    characterName = this.getCharacterNameFromFullString(this.searchInput);
-    realmName = this.getRealmNameFromFullstring(this.searchInput);
-
-    requestUrl =
-      this.requestCharBaseUrl +
-      '?region=eu' +
-      '&realm=' +
-      realmName +
-      '&name=' +
-      characterName;
-
-    this.http.get(requestUrl).subscribe(
-      (response) => {
-        this.searchedCharacter = response;
-        console.log(this.searchedCharacter);
-      },
-      (error) => {
-        console.log(error);
-      }
-    );
+  goToProfilePage(event: any) {
+    const characterName = this.getCharacterNameFromFullString(event.target.value);
+    const realmName = this.getRealmNameFromFullString(event.target.value);
+    this.searchedCharacter = this.search.getCharacterInfo(characterName, realmName);
 
     this.router.navigate(['/profile', characterName], {
       relativeTo: this.route,
@@ -59,7 +35,7 @@ export class SearchComponent implements OnInit {
     return fullCharacterString.split('-')[0];
   }
 
-  getRealmNameFromFullstring(fullCharacterString: string) {
+  getRealmNameFromFullString(fullCharacterString: string) {
     return fullCharacterString.split('-')[1];
   }
 }
