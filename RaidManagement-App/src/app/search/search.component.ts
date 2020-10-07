@@ -11,7 +11,8 @@ import { NavigationExtras } from '@angular/router';
   styleUrls: ['./search.component.scss'],
 })
 export class SearchComponent implements OnInit {
-  searchedCharacter: any;
+  
+  char: any;
 
   constructor(
     private router: Router,
@@ -24,9 +25,8 @@ export class SearchComponent implements OnInit {
   goToProfilePage(event: any) {
     const characterName = this.getCharacterNameFromFullString(event.target.value);
     const realmName = this.getRealmNameFromFullString(event.target.value);
-    this.searchedCharacter = this.search.getCharacterInfo(characterName, realmName);
-
-    this.router.navigate(['/profile', characterName], {
+    this.search.requestedCharacter = this.search.getCharacterInfo(characterName, realmName);
+    this.router.navigate(['/profile', characterName],  {
       relativeTo: this.route,
     });
   }
@@ -38,4 +38,5 @@ export class SearchComponent implements OnInit {
   getRealmNameFromFullString(fullCharacterString: string) {
     return fullCharacterString.split('-')[1];
   }
+
 }

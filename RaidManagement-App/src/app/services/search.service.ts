@@ -6,6 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class SearchService {
   requestCharBaseUrl = 'https://raider.io/api/v1/characters/profile';
+  public requestedCharacter: any;
 
   constructor(private http: HttpClient) {}
 
@@ -14,13 +15,13 @@ export class SearchService {
     let requestUrl: string;
 
     requestUrl = `${this.requestCharBaseUrl}?region=eu&realm=${realmName}&name=${characterName}`;
-
     this.http.get(requestUrl).subscribe(
       (response) => {
         requestResponse = response;
       },
       (error) => {
         console.log(error);
+        console.log(requestUrl);
       }
     );
 
