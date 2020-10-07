@@ -13,13 +13,7 @@ export class SearchService {
     let requestResponse: any;
     let requestUrl: string;
 
-    requestUrl =
-      this.requestCharBaseUrl +
-      '?region=eu' +
-      '&realm=' +
-      realmName +
-      '&name=' +
-      characterName;
+    requestUrl = `${this.requestCharBaseUrl}?region=eu&realm=${realmName}&name=${characterName}`;
 
     this.http.get(requestUrl).subscribe(
       (response) => {
