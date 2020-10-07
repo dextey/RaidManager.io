@@ -26,8 +26,7 @@ export class AccountComponent implements OnInit {
     this.charName = 'Baidoqt';
     this.realmName = 'BurningLegion';
     this.region = 'eu';
-    this.getUrl = this.requestUrl + '?region=' + this.region + '&realm=' + this.realmName + '&name=' + this.charName;
-
+    this.getUrl = `${this.requestUrl}?region=${this.region}&realm=${this.realmName}&name=${this.charName}`;
     this.http.get(this.getUrl).subscribe(response => {
       this.mainChar = response;
     }, error => {
