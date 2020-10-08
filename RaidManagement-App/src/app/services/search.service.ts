@@ -11,20 +11,9 @@ export class SearchService {
   constructor(private http: HttpClient) {}
 
   getCharacterInfo(characterName: string, realmName: string) {
-    let requestResponse: any;
     let requestUrl: string;
 
     requestUrl = `${this.requestCharBaseUrl}?region=eu&realm=${realmName}&name=${characterName}`;
-    this.http.get(requestUrl).subscribe(
-      (response) => {
-        requestResponse = response;
-      },
-      (error) => {
-        console.log(error);
-        console.log(requestUrl);
-      }
-    );
-
-    return requestResponse;
+    return this.http.get(requestUrl);
   }
 }

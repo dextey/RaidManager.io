@@ -14,6 +14,6 @@ export const appRoutes: Routes = [
     { path: 'raid', component: RaidOneComponent, canActivate: [AuthGuard]},
     { path: 'account', component: AccountComponent, canActivate: [AuthGuard]},
     { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard]},
-    { path: 'profile/:name', component: ProfileComponent, canActivate: [AuthGuard]},
+    { path: 'profile/:name/:realm', component: ProfileComponent, canActivate: [AuthGuard]},
     { path: '**', redirectTo: 'home', pathMatch: 'full'}
 ];

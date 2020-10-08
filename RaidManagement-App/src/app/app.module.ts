@@ -1,3 +1,4 @@
+import { SearchService } from './services/search.service';
 import { ErrorInterceptorProvider } from './services/error.interceptor';
 import { AuthService } from './services/auth.service';
 import { BrowserModule } from '@angular/platform-browser';
@@ -22,7 +23,7 @@ import { SearchComponent } from './search/search.component';
 import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
-   declarations: [					
+   declarations: [
       AppComponent,
       NavbarComponent,
       HomeComponent,
@@ -45,6 +46,7 @@ import { ProfileComponent } from './profile/profile.component';
    ],
    providers: [
       AuthService,
+      SearchService,
       ErrorInterceptorProvider
    ],
    bootstrap: [
