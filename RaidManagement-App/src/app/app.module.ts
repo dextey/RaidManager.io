@@ -21,9 +21,10 @@ import { FooterComponent } from './footer/footer.component';
 import { BackgroundComponent } from './background/background.component';
 import { SearchComponent } from './search/search.component';
 import { ProfileComponent } from './profile/profile.component';
+import { RefreshComponent } from './refresh/refresh.component';
 
 @NgModule({
-   declarations: [
+   declarations: [	
       AppComponent,
       NavbarComponent,
       HomeComponent,
@@ -34,7 +35,8 @@ import { ProfileComponent } from './profile/profile.component';
       FooterComponent,
       BackgroundComponent,
       SearchComponent,
-      ProfileComponent
+      ProfileComponent,
+      RefreshComponent
    ],
    imports: [
       BrowserModule,
