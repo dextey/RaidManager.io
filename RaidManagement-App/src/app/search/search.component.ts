@@ -20,13 +20,15 @@ export class SearchComponent implements OnInit {
   ngOnInit() {}
 
   goToProfilePage(event: any) {
-    const characterName = this.getCharacterNameFromFullString(
-      event.target.value
-    );
+    const characterName = this.getCharacterNameFromFullString(event.target.value);
     const realmName = this.getRealmNameFromFullString(event.target.value);
-    this.router.navigate(['/profile', characterName, realmName], {
-      relativeTo: this.route,
-    });
+
+    this.router.navigateByUrl('/refresh', { skipLocationChange: true }).then(() => {
+      this.router.navigate(['/profile', characterName, realmName], {
+        relativeTo: this.route,
+      });
+  });
+
   }
 
   getCharacterNameFromFullString(fullCharacterString: string) {

@@ -1,3 +1,4 @@
+import { RefreshComponent } from './refresh/refresh.component';
 import { ProfileComponent } from './profile/profile.component';
 import { AuthGuard } from './_guards/auth.guard';
 import { HomeComponent } from './home/home.component';
@@ -13,7 +14,8 @@ export const appRoutes: Routes = [
     { path: 'roster', component: RosterComponent, canActivate: [AuthGuard]},
     { path: 'raid', component: RaidOneComponent, canActivate: [AuthGuard]},
     { path: 'account', component: AccountComponent, canActivate: [AuthGuard]},
-    { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard]},
-    { path: 'profile/:name/:realm', component: ProfileComponent, canActivate: [AuthGuard]},
+    { path: 'profile', component: ProfileComponent},
+    { path: 'profile/:name/:realm', component: ProfileComponent},
+    { path: 'refresh', component: RefreshComponent},
     { path: '**', redirectTo: 'home', pathMatch: 'full'}
 ];
