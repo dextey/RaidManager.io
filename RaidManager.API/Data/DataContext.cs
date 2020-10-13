@@ -1,9 +1,8 @@
 
-using DatingV2.API.Models;
-using Microsoft.EntityFrameworkCore;
 using RaidManager.API.Models;
+using Microsoft.EntityFrameworkCore;
 
-namespace DatingV2.API.Data
+namespace RaidManager.API.Data
 
 {
     public class DataContext : DbContext

@@ -4,11 +4,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using DatingV2.API.Data;
+using RaidManager.API.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authorization;
 
-namespace DatingV2.API.Controllers
+namespace RaidManager.API.Controllers
 {   
     [Authorize]
     [Route("api/[controller]")]

@@ -1,4 +1,4 @@
-namespace DatingV2.API.Models
+namespace RaidManager.API.Models
 {
     public class Value
     {

@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace DatingV2.API.Migrations
+namespace RaidManager.API.Migrations
 {
     public partial class RenamedDB : Migration
     {
