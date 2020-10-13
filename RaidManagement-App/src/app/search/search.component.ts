@@ -13,8 +13,7 @@ import { NavigationExtras } from '@angular/router';
 export class SearchComponent implements OnInit {
   constructor(
     private router: Router,
-    private route: ActivatedRoute,
-    private search: SearchService
+    private route: ActivatedRoute
   ) {}
 
   ngOnInit() {}

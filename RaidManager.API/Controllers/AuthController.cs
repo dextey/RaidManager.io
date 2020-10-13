@@ -65,7 +65,7 @@ namespace RaidManager.API.Controllers
 
             var tokenHandler = new JwtSecurityTokenHandler();
             
-            var token = _authRepository.CreateTokenFromClaims(claims, _config.GetSection("AppSettings:Token").Value, tokenHandler);
+            var token = _authRepository.CreateTokenFromClaims(claims, DotNetEnv.Env.GetString("APP_TOKEN"), tokenHandler);
 
             return Ok(new {
                 token = tokenHandler.WriteToken(token)

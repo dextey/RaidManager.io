@@ -29,6 +29,13 @@ namespace DatingV2.API
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+            DotNetEnv.Env.Load(new DotNetEnv.Env.LoadOptions(
+                trimWhitespace: false,
+                isEmbeddedHashComment: true,
+                unescapeQuotedValues: true,
+                clobberExistingVars: true,
+                parseVariables: true
+            ));
         }
 
         public IConfiguration Configuration { get; }
@@ -46,7 +53,7 @@ namespace DatingV2.API
                     {
                         ValidateIssuerSigningKey = true,
                         IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII
-                            .GetBytes(Configuration.GetSection("AppSettings:Token").Value)),
+                            .GetBytes(DotNetEnv.Env.GetString("APP_TOKEN"))),
                         ValidateIssuer = false,
                         ValidateAudience = false
                     };
