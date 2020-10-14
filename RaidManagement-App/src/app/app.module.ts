@@ -22,9 +22,10 @@ import { BackgroundComponent } from './background/background.component';
 import { SearchComponent } from './search/search.component';
 import { ProfileComponent } from './profile/profile.component';
 import { RefreshComponent } from './refresh/refresh.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
-   declarations: [	
+   declarations: [		
       AppComponent,
       NavbarComponent,
       HomeComponent,
@@ -36,7 +37,8 @@ import { RefreshComponent } from './refresh/refresh.component';
       BackgroundComponent,
       SearchComponent,
       ProfileComponent,
-      RefreshComponent
+      RefreshComponent,
+      LoginComponent
    ],
    imports: [
       BrowserModule,
