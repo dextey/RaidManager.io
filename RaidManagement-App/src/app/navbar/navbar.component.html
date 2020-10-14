@@ -3,7 +3,7 @@
     <a class="navbar-brand" [routerLink]="['/home']" routerLinkActive="active" >RaidManager.IO</a>
 
   
-    <ul *ngIf="loggedIn()" class="navbar-nav mr-auto">
+    <ul class="navbar-nav mr-auto">
       <li class="nav-item" routerLinkActive="active">
         <a class="nav-link ml-3" [routerLink]="['/home']"  >Home 
           <span class="sr-only">(current)</span>
@@ -12,10 +12,10 @@
       <li class="nav-item" routerLinkActive="active">
         <a class="nav-link ml-3" [routerLink]="['/raid']">Raids</a>
       </li>
-      <li class="nav-item" routerLinkActive="active">
+      <li *ngIf="loggedIn()" class="nav-item" routerLinkActive="active">
         <a class="nav-link ml-3" [routerLink]="['/roster']"  tabindex="-1" aria-disabled="true">Roster</a>
       </li>
-      <li class="nav-item" routerLinkActive="active">
+      <li *ngIf="loggedIn()" class="nav-item" routerLinkActive="active">
         <a class="nav-link ml-3" [routerLink]="['/account']"  tabindex="-1" aria-disabled="true">Account</a>
       </li>
       <li class="nav-item ml-3">
