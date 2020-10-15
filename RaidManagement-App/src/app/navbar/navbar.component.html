@@ -22,22 +22,26 @@
         <app-search></app-search>
       </li>
 
-      <li class="nav-item float-right" routerLinkActive="active">
-        <button class="btn button-sign-in my-2 my-sm-0" [routerLink]="['/login']">Sign in</button>
-      </li>
+      
     </ul>
 
-    <div *ngIf="loggedIn()" class="dropdown" dropdown>
-      <a class=" dropdown-toggle text-light" dropdownToggle>
-        Hello {{authService.decodedToken.unique_name | titlecase}}
-      </a>
-    
-      <div class="dropdown-menu mt-3" *dropdownMenu>
-        <a class="dropdown-item" href="#"><i class="fa fa-user"></i>Edit profile</a>
-        <a class="dropdown-item" (click)="logOut()" ><i class="fa fa-sign-out"></i>Logout</a>
+    <div>
+      <div *ngIf="!loggedIn()">
+        <button  class="btn button-sign-in my-2 my-sm-0" [routerLink]="['/login']">Sign in</button>
+
+      </div>
+      <div *ngIf="loggedIn()" class="dropdown" dropdown>
+        <a class=" dropdown-toggle text-light" dropdownToggle>
+          Hello {{authService.decodedToken.unique_name | titlecase}}
+        </a>
+        
+        <div class="dropdown-menu mt-3" *dropdownMenu>
+          <a class="dropdown-item" href="#"><i class="fa fa-user"></i>Edit profile</a>
+          <a class="dropdown-item" (click)="logOut()" ><i class="fa fa-sign-out"></i>Logout</a>
+        </div>
       </div>
     </div>
-  
+      
   </div>
 </nav>
   
