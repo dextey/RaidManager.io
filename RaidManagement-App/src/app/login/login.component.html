@@ -8,18 +8,18 @@
 				<form #loginForm="ngForm" (ngSubmit)="login()">
 					<div class="input-group form-group">
 						<div class="input-group-prepend">
-							<span class="input-group-text"><i class="fas fa-user"></i></span>
+							<div class="input-group-text"><i class="far fa-user"></i></div>
 						</div>
 						<input type="text" class="form-control" name="username" placeholder="Username" required [(ngModel)]="model.username">
 						
 					</div>
 					<div class="input-group form-group">
 						<div class="input-group-prepend">
-							<span class="input-group-text"><i class="fas fa-key"></i></span>
+							<div class="input-group-text"><i class="far fa-key"></i></div>
 						</div>
 						<input type="password" class="form-control" name="password" placeholder="Password" required [(ngModel)]="model.password">
 					</div>
-					<div class="row align-items-center remember">
+					<div class="row align-items-center remember pb-2">
 						<input type="checkbox">Remember Me
 					</div>
 					<button [disabled]="!loginForm.valid" class="btn button-sign-in my-2 my-sm-0" type="submit">Login</button>

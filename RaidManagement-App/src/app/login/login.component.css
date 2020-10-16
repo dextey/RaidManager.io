@@ -56,6 +56,7 @@ input:focus {
 
 .button-sign-in {
   background-color: #6CCFF6;
+  float: right;
 }
 
 .button-sign-in:hover {
