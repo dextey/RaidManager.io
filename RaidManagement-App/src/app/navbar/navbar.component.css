@@ -4,8 +4,10 @@
 
 .button-sign-in {
     background-color: #6CCFF6;
+    color: white;
 }
 
 .button-sign-in:hover {
     background-color: white;
+    color: black;
 }

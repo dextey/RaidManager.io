@@ -1,3 +1,4 @@
+import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { RefreshComponent } from './refresh/refresh.component';
 import { ProfileComponent } from './profile/profile.component';
@@ -12,6 +13,7 @@ import { AccountComponent } from './account/account.component';
 export const appRoutes: Routes = [
     { path: 'home', component: HomeComponent},
     { path: 'login', component: LoginComponent},
+    { path: 'register', component: RegisterComponent},
     { path: 'navbar', component: NavbarComponent},
     { path: 'roster', component: RosterComponent, canActivate: [AuthGuard]},
     { path: 'raid', component: RaidOneComponent, canActivate: [AuthGuard]},

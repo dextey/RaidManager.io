@@ -28,7 +28,7 @@
     <div>
       <div *ngIf="!loggedIn()">
         <button  class="btn button-sign-in my-2 my-sm-0" [routerLink]="['/login']">Sign in</button>
-
+        <button  class="btn button-sign-in my-2 my-sm-0 ml-2" [routerLink]="['/register']">Sign up</button>
       </div>
       <div *ngIf="loggedIn()" class="dropdown" dropdown>
         <a class=" dropdown-toggle text-light" dropdownToggle>
