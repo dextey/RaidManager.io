@@ -25,7 +25,7 @@ import { RefreshComponent } from './refresh/refresh.component';
 import { LoginComponent } from './login/login.component';
 
 @NgModule({
-   declarations: [		
+   declarations: [
       AppComponent,
       NavbarComponent,
       HomeComponent,

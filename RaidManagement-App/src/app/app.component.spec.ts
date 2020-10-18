@@ -1,12 +1,32 @@
+import { SearchComponent } from './search/search.component';
+import { RosterComponent } from './roster/roster.component';
+import { RaidOneComponent } from './raid-one/raid-one.component';
+import { ProfileComponent } from './profile/profile.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { LoginComponent } from './login/login.component';
+import { HomeComponent } from './home/home.component';
+import { AccountComponent } from './account/account.component';
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import {RouterTestingModule} from '@angular/router/testing';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
-        AppComponent
+        AppComponent,
+        AccountComponent,
+        HomeComponent,
+        LoginComponent,
+        SearchComponent,
+        NavbarComponent,
+        ProfileComponent,
+        RaidOneComponent,
+        RosterComponent
       ],
+      imports: [ HttpClientTestingModule,
+        RouterTestingModule ]
     }).compileComponents();
   }));
 

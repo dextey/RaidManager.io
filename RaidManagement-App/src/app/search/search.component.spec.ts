@@ -2,7 +2,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
-
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import {RouterTestingModule} from '@angular/router/testing';
 import { SearchComponent } from './search.component';
 
 describe('SearchComponent', () => {
@@ -11,7 +12,9 @@ describe('SearchComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SearchComponent ]
+      declarations: [ SearchComponent ],
+      imports: [ HttpClientTestingModule,
+        RouterTestingModule ]
     })
     .compileComponents();
   }));
@@ -25,4 +28,17 @@ describe('SearchComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should return character name from Name-Realm string', () => {
+    const charName = 'Baidoqt';
+    const nameRealmString = 'Baidoqt-BurningLegion';
+    expect(component.getCharacterNameFromFullString(nameRealmString)).toBe(charName);
+  });
+
+  it('should return realm name from Name-Realm string', () => {
+    const realmName = 'BurningLegion';
+    const nameRealmString = 'Baidoqt-BurningLegion';
+    expect(component.getRealmNameFromFullString(nameRealmString)).toBe(realmName);
+  });
+
 });
