@@ -1,3 +1,4 @@
+import { AlertifyService } from './../services/alertify.service';
 import { SearchService } from './../services/search.service';
 import { Character } from './../_models/character.model';
 import { Component, OnInit } from '@angular/core';
@@ -13,12 +14,17 @@ import { NavigationExtras } from '@angular/router';
 export class SearchComponent implements OnInit {
   constructor(
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private alertify: AlertifyService
   ) {}
 
   ngOnInit() {}
 
   goToProfilePage(event: any) {
+    if (!this.isSearchValid(event.target.value)) {
+      this.alertify.error('Wrong input format');
+      return;
+    }
     const characterName = this.getCharacterNameFromFullString(event.target.value);
     const realmName = this.getRealmNameFromFullString(event.target.value);
 
@@ -38,5 +44,8 @@ export class SearchComponent implements OnInit {
     return fullCharacterString.split('-')[1];
   }
 
+  isSearchValid(searchInput: string) {
+    return (/^[A-Za-z]*[-][A-Za-z]*$/).test(searchInput);
+  }
   
 }

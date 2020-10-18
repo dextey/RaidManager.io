@@ -16,7 +16,7 @@ export const appRoutes: Routes = [
     { path: 'register', component: RegisterComponent},
     { path: 'navbar', component: NavbarComponent},
     { path: 'roster', component: RosterComponent, canActivate: [AuthGuard]},
-    { path: 'raid', component: RaidOneComponent, canActivate: [AuthGuard]},
+    { path: 'raid', component: RaidOneComponent},
     { path: 'account', component: AccountComponent, canActivate: [AuthGuard]},
     { path: 'profile', component: ProfileComponent},
     { path: 'profile/:name/:realm', component: ProfileComponent},
