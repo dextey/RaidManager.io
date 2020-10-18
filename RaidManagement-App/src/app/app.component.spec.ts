@@ -1,3 +1,7 @@
+import { FormsModule } from '@angular/forms';
+import { RefreshComponent } from './refresh/refresh.component';
+import { FooterComponent } from './footer/footer.component';
+import { BackgroundComponent } from './background/background.component';
 import { SearchComponent } from './search/search.component';
 import { RosterComponent } from './roster/roster.component';
 import { RaidOneComponent } from './raid-one/raid-one.component';
@@ -23,10 +27,14 @@ describe('AppComponent', () => {
         NavbarComponent,
         ProfileComponent,
         RaidOneComponent,
-        RosterComponent
+        RosterComponent,
+        BackgroundComponent,
+        FooterComponent,
+        RefreshComponent
       ],
       imports: [ HttpClientTestingModule,
-        RouterTestingModule ]
+        RouterTestingModule,
+        FormsModule ]
     }).compileComponents();
   }));
 
@@ -42,10 +50,4 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('RaidManagement-App');
   });
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('RaidManagement-App app is running!');
-  });
 });

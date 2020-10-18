@@ -1,3 +1,4 @@
+import { FormsModule } from '@angular/forms';
 /* tslint:disable:no-unused-variable */
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
@@ -14,7 +15,8 @@ describe('LoginComponent', () => {
     TestBed.configureTestingModule({
       declarations: [ LoginComponent ],
       imports: [ HttpClientTestingModule,
-        RouterTestingModule ]
+        RouterTestingModule,
+        FormsModule ]
     })
     .compileComponents();
   }));
