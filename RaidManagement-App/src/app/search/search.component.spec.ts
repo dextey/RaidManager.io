@@ -5,6 +5,7 @@ import { DebugElement } from '@angular/core';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import {RouterTestingModule} from '@angular/router/testing';
 import { SearchComponent } from './search.component';
+import { first } from 'rxjs/operators';
 
 describe('SearchComponent', () => {
   let component: SearchComponent;
@@ -39,6 +40,15 @@ describe('SearchComponent', () => {
     const realmName = 'BurningLegion';
     const nameRealmString = 'Baidoqt-BurningLegion';
     expect(component.getRealmNameFromFullString(nameRealmString)).toBe(realmName);
+  });
+
+  it('search text input format should match regular expression', () => {
+    const firstString = 'Xime-BurningLegion';
+    const secondString = 'xime-burninglegion';
+    const thirdString = 'x.-me-burninglegion';
+    expect(component.isSearchValid(firstString)).toBe(true);
+    expect(component.isSearchValid(secondString)).toBe(true);
+    expect(component.isSearchValid(thirdString)).toBeFalse();
   });
 
 });

@@ -13,19 +13,19 @@ export class ProfileComponent implements OnInit {
   canBeLoaded: boolean;
 
   characterName: string;
-  realmNameTwo: string;
+  realmName: string;
 
   constructor(private search: SearchService, private activatedRoute: ActivatedRoute) {}
 
   ngOnInit() {
     this.activatedRoute.paramMap.subscribe(params => {
       this.characterName = params.get('name');
-      this.realmNameTwo = params.get('realm');
+      this.realmName = params.get('realm');
     });
 
     this.canBeLoaded = false;
 
-    this.search.getCharacterInfo(this.characterName, this.realmNameTwo).subscribe(response => {
+    this.search.getCharacterInfo(this.characterName, this.realmName).subscribe(response => {
       this.character = response;
       this.canBeLoaded = true;
 
