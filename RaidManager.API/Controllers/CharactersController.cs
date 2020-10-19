@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using RaidManager.API.Data;
+using RaidManager.API.Interfaces;
 using RaidManager.API.Models;
 
 namespace RaidManager.API.Controllers
@@ -14,9 +15,12 @@ namespace RaidManager.API.Controllers
     {
         private readonly DataContext _context; 
 
-        public CharactersController(DataContext context)
+        private readonly ICharacterRepository _characterRepository;
+
+        public CharactersController(DataContext context, ICharacterRepository characterRepository)
         {
             _context = context;
+            _characterRepository = characterRepository;
         }
 
         [AllowAnonymous]
@@ -36,8 +40,13 @@ namespace RaidManager.API.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> PostCharacter(Character character) 
+        public async Task<IActionResult> AddIfNotExistsCharacter(Character character) 
         {
+            if(await _characterRepository.CharacterExists(character)) 
+            {
+                // 409 conflict seems to be most appropriate status code
+                return StatusCode(409);
+            }
             _context.Characters.Add(character);
             await _context.SaveChangesAsync();
 
