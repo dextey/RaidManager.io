@@ -5,4 +5,25 @@
   .class-paladin {
     color: #f58cba;
   }
-  
+
+hr {
+  border-color: gray;
+}
+
+.raid-progress-item {
+  border: 1px solid gray;
+  margin: 5px;
+  background: rgb(2,0,36);
+  background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(44,44,147,1) 100%, rgba(0,212,255,1) 100%);
+}
+
+
+.raid-image {
+  max-width: 100%;
+  height: auto;
+  border: 0;
+}
+.raid-progress-wrapper {
+ justify-content: space-between;
+ padding: 5px;
+}

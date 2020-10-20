@@ -6,8 +6,8 @@
   </div>
   <div class="row">
     <div class="col-sm-2"></div>
-    <div class="col-sm-8 bg-dark rounded">
-      <div class="p-3 d-flex flex-row" *ngIf="canBeLoaded">
+    <div class="col-sm-8 bg-dark rounded" *ngIf="canBeLoaded">
+      <div class="p-3 d-flex flex-row" >
         <img
           src="{{ character?.thumbnail_url }}"
           class="img-fluid border border-white m-2"
@@ -20,10 +20,53 @@
           </div>
           <div class="d-flex flex-row">
             <h6 class="text-light pl-3">{{ character?.race }}</h6>
+            <h6 class="class-paladin pl-1">{{character?.active_spec_name}}</h6>
             <h6 class="class-paladin pl-1">{{ character?.class }}</h6>
           </div>
         </div>
       </div>
+      <hr/>
+        <div class="raid-progress-wrapper">
+          <h6 class="text-light pl-3">RAID PROGRESSION</h6>   
+          <div class="d-flex flex-row">
+            <div class="bg-success raid-progress-item">
+              <div class="raid-progress-image">
+                <img class="raid-image" src="https://render-eu.worldofwarcraft.com/zones/uldir-small.jpg">
+              </div>
+              <div class="raid-progress-header">
+                <h4 class="text-light pl-2">Uldir</h4>
+              </div>
+              <div class="raid-progress-body"></div>
+            </div>
+            <div class="bg-success raid-progress-item">
+              <div class="raid-progress-image">
+                <img class="raid-image" src="https://render-eu.worldofwarcraft.com/zones/uldir-small.jpg">
+              </div>
+              <div class="raid-progress-header">
+                <h4 class="text-light pl-2">Uldir</h4>
+              </div>
+              <div class="raid-progress-body"></div>
+            </div>
+            <div class="bg-success raid-progress-item">
+              <div class="raid-progress-image">
+                <img class="raid-image" src="https://render-eu.worldofwarcraft.com/zones/uldir-small.jpg">
+              </div>
+              <div class="raid-progress-header">
+                <h4 class="text-light pl-2">Uldir</h4>
+              </div>
+              <div class="raid-progress-body"></div>
+            </div>
+            <div class="bg-success raid-progress-item">
+              <div class="raid-progress-image">
+                <img class="raid-image" src="https://render-eu.worldofwarcraft.com/zones/uldir-small.jpg">
+              </div>
+              <div class="raid-progress-header">
+                <h4 class="text-light pl-2">Uldir</h4>
+              </div>
+              <div class="raid-progress-body"></div>
+            </div>
+          </div>      
+        </div>     
     </div>
     <div class="col-sm-2"></div>
   </div>
