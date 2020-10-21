@@ -30,19 +30,19 @@ namespace RaidManager.API.Controllers
         {
             //validate request
 
-            userForRegister.username = userForRegister.username.ToLower();
+            userForRegister.Username = userForRegister.Username.ToLower();
 
-            if(await _authRepository.UserExists(userForRegister.username))
+            if(await _authRepository.UserExists(userForRegister.Username))
             {
                 return BadRequest("Username already exists");
             }
 
             var userToCreate = new User
             {
-                Username = userForRegister.username
+                Username = userForRegister.Username
             };
 
-            var createdUser = await _authRepository.RegisterUser(userToCreate, userForRegister.password);
+            var createdUser = await _authRepository.RegisterUser(userToCreate, userForRegister.Password);
 
             return StatusCode(201);
         }
