@@ -39,7 +39,7 @@ namespace RaidManager.API.Controllers
             return Ok(character);
         }
 
-        [HttpPost]
+        [HttpPost("add")]
         public async Task<IActionResult> AddIfNotExistsCharacter(Character character) 
         {
             if(await _characterRepository.CharacterExists(character)) 
