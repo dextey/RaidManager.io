@@ -1,0 +1,9 @@
+namespace RaidManager.API.DataTransferObjects
+{
+    public class CharacterToAddDTO
+    {
+        public string Name { get; set; }
+        public string Realm { get; set; }
+        public string Region { get; set; }
+    }
+}

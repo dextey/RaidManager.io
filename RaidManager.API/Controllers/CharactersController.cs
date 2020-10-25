@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using RaidManager.API.Data;
+using RaidManager.API.DataTransferObjects;
 using RaidManager.API.Interfaces;
 using RaidManager.API.Models;
 
@@ -40,19 +41,24 @@ namespace RaidManager.API.Controllers
         }
 
         [HttpPost("add")]
-        public async Task<IActionResult> AddIfNotExistsCharacter(Character character) 
+        public async Task<IActionResult> AddIfNotExistsCharacter(CharacterToAddDTO characterToAdd) 
         {
-            if(await _characterRepository.CharacterExists(character)) 
+            if(await _characterRepository.CharacterExists(characterToAdd)) 
             {
                 // 409 conflict seems to be most appropriate status code
                 return StatusCode(409);
             }
-            _context.Characters.Add(character);
-            await _context.SaveChangesAsync();
 
-            return CreatedAtAction(nameof(character), new {
-                id = character.Id
-            }, character);
+            var character = new Character 
+            {
+                Name = characterToAdd.Name,
+                Realm = characterToAdd.Realm,
+                Region = characterToAdd.Region
+            };
+
+            var addedCharacter = await _characterRepository.Add(character);
+
+            return StatusCode(201);
         }
     }
 }
