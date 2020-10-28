@@ -1,3 +1,4 @@
+import { CharacterModel } from './../_interfaces/CharacterModel';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
@@ -10,7 +11,7 @@ export class CharacterService {
 
     constructor(private http: HttpClient) { }
 
-    addCharacter(model: any) {
+    addCharacter(model: CharacterModel) {
       return this.http.post(`${this.baseUrl}add`, model);
     }
 

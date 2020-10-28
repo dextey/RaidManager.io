@@ -1,10 +1,11 @@
+import { CharacterModel } from './../_interfaces/CharacterModel';
 import { AlertifyService } from './../services/alertify.service';
 import { SearchService } from './../services/search.service';
-import { Character } from './../_models/character.model';
 import { Component, OnInit } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NavigationExtras } from '@angular/router';
+import { CharacterService } from '../services/character.service';
 
 @Component({
   selector: 'app-search',
@@ -15,7 +16,8 @@ export class SearchComponent implements OnInit {
   constructor(
     private router: Router,
     private route: ActivatedRoute,
-    private alertify: AlertifyService
+    private alertify: AlertifyService,
+    private characterService: CharacterService
   ) {}
 
   ngOnInit() {}
@@ -27,6 +29,9 @@ export class SearchComponent implements OnInit {
     }
     const characterName = this.getCharacterNameFromFullString(event.target.value);
     const realmName = this.getRealmNameFromFullString(event.target.value);
+
+    const characterToPost = this.createAndReturnCharacterModel(characterName, realmName);
+    this.characterService.addCharacter(characterToPost);
 
     this.router.navigateByUrl('/refresh', { skipLocationChange: true }).then(() => {
       this.router.navigate(['/profile', characterName, realmName], {
@@ -47,5 +52,13 @@ export class SearchComponent implements OnInit {
   isSearchValid(searchInput: string) {
     return (/^[A-Za-z]*[-][A-Za-z]*$/).test(searchInput);
   }
-  
+
+  createAndReturnCharacterModel(name: string, realm: string): CharacterModel {
+    return {
+          Name: name,
+          Realm: realm,
+          Region: 'EU'
+    };
+  }
+
 }
