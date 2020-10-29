@@ -30,9 +30,6 @@ export class SearchComponent implements OnInit {
     const characterName = this.getCharacterNameFromFullString(event.target.value);
     const realmName = this.getRealmNameFromFullString(event.target.value);
 
-    const characterToPost = this.createAndReturnCharacterModel(characterName, realmName);
-    this.characterService.addCharacter(characterToPost);
-
     this.router.navigateByUrl('/refresh', { skipLocationChange: true }).then(() => {
       this.router.navigate(['/profile', characterName, realmName], {
         relativeTo: this.route,
