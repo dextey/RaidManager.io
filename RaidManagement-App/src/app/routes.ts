@@ -1,3 +1,4 @@
+import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { RefreshComponent } from './refresh/refresh.component';
@@ -18,6 +19,7 @@ export const appRoutes: Routes = [
     { path: 'roster', component: RosterComponent, canActivate: [AuthGuard]},
     { path: 'raid', component: RaidOneComponent},
     { path: 'account', component: AccountComponent, canActivate: [AuthGuard]},
+    { path: 'account/edit', component: EditProfileComponent, canActivate: [AuthGuard]},
     { path: 'profile', component: ProfileComponent},
     { path: 'profile/:name/:realm', component: ProfileComponent},
     { path: 'refresh', component: RefreshComponent},

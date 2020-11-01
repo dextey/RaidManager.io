@@ -23,9 +23,10 @@ import { SearchComponent } from './search/search.component';
 import { ProfileComponent } from './profile/profile.component';
 import { RefreshComponent } from './refresh/refresh.component';
 import { LoginComponent } from './login/login.component';
+import { EditProfileComponent } from './edit-profile/edit-profile.component';
 
 @NgModule({
-   declarations: [
+   declarations: [	
       AppComponent,
       NavbarComponent,
       HomeComponent,
@@ -38,7 +39,8 @@ import { LoginComponent } from './login/login.component';
       SearchComponent,
       ProfileComponent,
       RefreshComponent,
-      LoginComponent
+      LoginComponent,
+      EditProfileComponent
    ],
    imports: [
       BrowserModule,
