@@ -28,6 +28,7 @@
     "passport-bnet": "^2.0.0",
     "rxjs": "~6.5.4",
     "tslib": "^1.14.1",
+    "yargs": "^16.1.0",
     "zone.js": "~0.10.2"
   },
   "devDependencies": {
