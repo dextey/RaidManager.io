@@ -30,7 +30,7 @@
             ],
             "scripts": [],
             "customWebpackConfig" : {
-              "path": "./extra-webpack.config.js",
+              "path": "src/extra-webpack.config.js",
               "mergeStrategies": {
                 "externals": "replace"
               }
@@ -68,9 +68,15 @@
           }
         },
         "serve": {
-          "builder": "@angular-devkit/custom-webpack:dev-server",
+          "builder": "@angular-builders/custom-webpack:dev-server",
           "options": {
-            "browserTarget": "RaidManagement-App:build"
+            "browserTarget": "RaidManagement-App:build",
+            "customWebpackConfig" : {
+              "path": "src/extra-webpack.config.js",
+              "mergeStrategies": {
+                "externals": "replace"
+              }
+            }
           },
           "configurations": {
             "production": {
