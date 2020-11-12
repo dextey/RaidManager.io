@@ -30,7 +30,7 @@
             ],
             "scripts": [],
             "customWebpackConfig" : {
-              "path": "src/extra-webpack.config.js",
+              "path": "./extra-webpack.config.js",
               "mergeStrategies": {
                 "externals": "replace"
               }
@@ -72,7 +72,7 @@
           "options": {
             "browserTarget": "RaidManagement-App:build",
             "customWebpackConfig" : {
-              "path": "src/extra-webpack.config.js",
+              "path": "./extra-webpack.config.js",
               "mergeStrategies": {
                 "externals": "replace"
               }
