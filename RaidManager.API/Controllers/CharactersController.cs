@@ -40,6 +40,7 @@ namespace RaidManager.API.Controllers
             return Ok(character);
         }
 
+        [AllowAnonymous]
         [HttpPost("add")]
         public async Task<IActionResult> AddIfNotExistsCharacter(CharacterToAddDTO characterToAdd) 
         {
