@@ -48,7 +48,7 @@ import { EditProfileComponent } from './edit-profile/edit-profile.component';
       FormsModule,
       BrowserAnimationsModule,
       BsDropdownModule.forRoot(),
-      RouterModule.forRoot(appRoutes)
+      RouterModule.forRoot(appRoutes, { relativeLinkResolution: 'legacy' })
    ],
    providers: [
       AuthService,
