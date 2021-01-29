@@ -28,13 +28,7 @@
               "./node_modules/ngx-bootstrap/datepicker/bs-datepicker.css",
               "src/styles.css"
             ],
-            "scripts": [],
-            "customWebpackConfig" : {
-              "path": "./extra-webpack.config.js",
-              "mergeStrategies": {
-                "externals": "replace"
-              }
-            }
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -70,13 +64,7 @@
         "serve": {
           "builder": "@angular-builders/build-angular:dev-server",
           "options": {
-            "browserTarget": "RaidManagement-App:build",
-            "customWebpackConfig" : {
-              "path": "./extra-webpack.config.js",
-              "mergeStrategies": {
-                "externals": "replace"
-              }
-            }
+            "browserTarget": "RaidManagement-App:build"
           },
           "configurations": {
             "production": {
