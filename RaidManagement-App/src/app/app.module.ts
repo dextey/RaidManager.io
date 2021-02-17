@@ -15,7 +15,6 @@ import { RegisterComponent } from './register/register.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RaidOneComponent } from './raid-one/raid-one.component';
 import { RosterComponent } from './roster/roster.component';
-import { appRoutes } from './routes';
 import { AccountComponent } from './account/account.component';
 import { FooterComponent } from './footer/footer.component';
 import { BackgroundComponent } from './background/background.component';
@@ -24,9 +23,10 @@ import { ProfileComponent } from './profile/profile.component';
 import { RefreshComponent } from './refresh/refresh.component';
 import { LoginComponent } from './login/login.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
-   declarations: [	
+   declarations: [
       AppComponent,
       NavbarComponent,
       HomeComponent,
@@ -44,11 +44,11 @@ import { EditProfileComponent } from './edit-profile/edit-profile.component';
    ],
    imports: [
       BrowserModule,
+      AppRoutingModule,
       HttpClientModule,
       FormsModule,
       BrowserAnimationsModule,
-      BsDropdownModule.forRoot(),
-      RouterModule.forRoot(appRoutes, { relativeLinkResolution: 'legacy' })
+      BsDropdownModule.forRoot()
    ],
    providers: [
       AuthService,
