@@ -9,6 +9,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { RaidOneComponent } from './raid-one/raid-one.component';
 import { RefreshComponent } from './refresh/refresh.component';
 import { RegisterComponent } from './register/register.component';
+import { RosterComponent } from './roster/roster.component';
 import { AuthGuard } from './_guards/auth.guard';
 
 const routes: Routes = [
@@ -16,7 +17,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent},
   { path: 'register', component: RegisterComponent},
   { path: 'navbar', component: NavbarComponent},
-  { path: 'roster', component: RegisterComponent, canActivate: [AuthGuard]},
+  { path: 'roster', component: RosterComponent},
   { path: 'raid', component: RaidOneComponent},
   { path: 'account', component: AccountComponent, canActivate: [AuthGuard]},
   { path: 'account/edit', component: EditProfileComponent, canActivate: [AuthGuard]},
