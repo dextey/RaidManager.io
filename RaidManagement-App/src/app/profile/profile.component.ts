@@ -17,8 +17,13 @@ export class ProfileComponent implements OnInit {
   canBeLoaded: boolean;
   characterName: string;
   realmName: string;
-
-  constructor(private search: SearchService, private activatedRoute: ActivatedRoute, private characterService: CharacterService, private alertify: AlertifyService) {}
+  blankChar: BlankCharacter;
+  constructor(
+    private search: SearchService,
+    private activatedRoute: ActivatedRoute,
+    private characterService: CharacterService,
+    private alertify: AlertifyService
+    ) {}
 
   ngOnInit() {
     this.activatedRoute.paramMap.subscribe(params => {
@@ -26,28 +31,34 @@ export class ProfileComponent implements OnInit {
       this.realmName = params.get('realm');
     });
 
+    this.blankChar = {
+      Name: this.characterName,
+      Realm: this.realmName,
+      Region: 'EU'
+    }
+
     this.canBeLoaded = false;
 
     this.search.getCharacterInfo(this.characterName, this.realmName).subscribe(response => {
       this.character = response;
       this.canBeLoaded = true;
 
+      this.blankChar.Name = this.character.name;
+      this.blankChar.Realm = this.character.realm;
+      this.blankChar.Region = this.character.region;
+
+      this.addBlankCharacterToDb();
     });
+  }
 
-    const blankChar: BlankCharacter = {
-      Name: this.characterName,
-      Realm: this.realmName,
-      Region: 'EU'
-    }
-
-    this.characterService.addCharacter(blankChar)
+  addBlankCharacterToDb() {
+    this.characterService.addCharacter(this.blankChar)
       .subscribe( ()=>{
           this.alertify.success('Character added');
       }, error => {
         this.alertify.error('Character not added');
       });
-  }
 
-
+    }
 
 }
