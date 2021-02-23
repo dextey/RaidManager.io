@@ -18,6 +18,7 @@ export class ProfileComponent implements OnInit {
   characterName: string;
   realmName: string;
   blankChar: BlankCharacter;
+
   constructor(
     private search: SearchService,
     private activatedRoute: ActivatedRoute,
@@ -34,7 +35,8 @@ export class ProfileComponent implements OnInit {
     this.blankChar = {
       Name: this.characterName,
       Realm: this.realmName,
-      Region: 'EU'
+      Region: 'EU',
+      FullName: `${this.characterName}-${this.realmName}`
     }
 
     this.canBeLoaded = false;

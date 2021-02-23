@@ -54,7 +54,8 @@ export class SearchComponent implements OnInit {
     return {
           Name: name,
           Realm: realm,
-          Region: 'EU'
+          Region: 'EU',
+          FullName: `${name}-${realm}`
     };
   }
 
