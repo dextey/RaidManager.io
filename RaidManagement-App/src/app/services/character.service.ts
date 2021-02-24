@@ -17,4 +17,12 @@ export class CharacterService {
       return this.http.post<BlankCharacter>(this.baseUrl + 'add', model)
     }
 
+    getCharactersStartingWith(term: string) {
+      let requestUrl: string;
+
+      requestUrl = `${this.baseUrl}search?term=${term}`;
+
+      return this.http.get(requestUrl);
+    }
+
 }

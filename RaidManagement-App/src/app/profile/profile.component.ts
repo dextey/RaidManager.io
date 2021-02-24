@@ -48,6 +48,7 @@ export class ProfileComponent implements OnInit {
       this.blankChar.Name = this.character.name;
       this.blankChar.Realm = this.character.realm;
       this.blankChar.Region = this.character.region;
+      this.blankChar.FullName = `${this.character.name}-${this.character.realm}`;
 
       this.addBlankCharacterToDb();
     });

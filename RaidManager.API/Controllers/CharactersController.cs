@@ -1,3 +1,4 @@
+using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -33,6 +34,14 @@ namespace RaidManager.API.Controllers
         }
 
         [AllowAnonymous]
+        [HttpGet("search")]
+        public async Task<IActionResult> GetCharactersStartingWith(string term) 
+        {           
+            var searchResults = await _context.Characters.Where(x => x.FullName.StartsWith(term)).ToListAsync();
+            return Ok(searchResults);
+        }
+
+        [AllowAnonymous]
         [HttpGet("{id}")]
         public async Task<IActionResult> GetCharacter(int id)
         {
@@ -54,7 +63,8 @@ namespace RaidManager.API.Controllers
             {
                 Name = characterToAdd.Name,
                 Realm = characterToAdd.Realm,
-                Region = characterToAdd.Region
+                Region = characterToAdd.Region,
+                FullName = characterToAdd.FullName,
             };
 
             var addedCharacter = await _characterRepository.Add(character);

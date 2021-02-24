@@ -24,6 +24,7 @@ import { RefreshComponent } from './refresh/refresh.component';
 import { LoginComponent } from './login/login.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { AppRoutingModule } from './app-routing.module';
+import { SearchResultsComponent } from './search-results/search-results.component';
 
 @NgModule({
    declarations: [
@@ -40,7 +41,8 @@ import { AppRoutingModule } from './app-routing.module';
       ProfileComponent,
       RefreshComponent,
       LoginComponent,
-      EditProfileComponent
+      EditProfileComponent,
+      SearchResultsComponent
    ],
    imports: [
       BrowserModule,
