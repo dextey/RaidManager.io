@@ -30,12 +30,24 @@ export class SearchComponent implements OnInit {
     const characterName = this.getCharacterNameFromFullString(event.target.value);
     const realmName = this.getRealmNameFromFullString(event.target.value);
 
-    this.router.navigateByUrl('/refresh', { skipLocationChange: true }).then(() => {
-      this.router.navigate(['/profile', characterName, realmName], {
-        relativeTo: this.route,
+    this.router
+      .navigateByUrl('/refresh', { skipLocationChange: true })
+      .then(() => {
+        this.router.navigate(['/profile', characterName, realmName], {
+          relativeTo: this.route,
+        });
       });
-  });
+  }
 
+  goToSearchResults(event: any) {
+    const searchTerm = event.target.value;
+    this.router
+      .navigateByUrl('/refresh', { skipLocationChange: true })
+      .then(() => {
+        this.router.navigate(['/search', searchTerm], {
+          relativeTo: this.route,
+        });
+      });
   }
 
   getCharacterNameFromFullString(fullCharacterString: string) {
@@ -47,16 +59,15 @@ export class SearchComponent implements OnInit {
   }
 
   isSearchValid(searchInput: string) {
-    return (/^[A-Za-z]*[-][A-Za-z]*$/).test(searchInput);
+    return /^[A-Za-z]*[-][A-Za-z]*$/.test(searchInput);
   }
 
   createAndReturnCharacterModel(name: string, realm: string): CharacterModel {
     return {
-          Name: name,
-          Realm: realm,
-          Region: 'EU',
-          FullName: `${name}-${realm}`
+      Name: name,
+      Realm: realm,
+      Region: 'EU',
+      FullName: `${name}-${realm}`,
     };
   }
-
 }

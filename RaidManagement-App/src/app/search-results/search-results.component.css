@@ -1,0 +1,11 @@
+.results-wrapper {
+  min-height: 100vh;
+}
+
+.class-paladin {
+  color: #f58cba;
+}
+
+hr {
+border-color: gray;
+}

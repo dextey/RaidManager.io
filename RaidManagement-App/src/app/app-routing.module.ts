@@ -10,6 +10,7 @@ import { RaidOneComponent } from './raid-one/raid-one.component';
 import { RefreshComponent } from './refresh/refresh.component';
 import { RegisterComponent } from './register/register.component';
 import { RosterComponent } from './roster/roster.component';
+import { SearchResultsComponent } from './search-results/search-results.component';
 import { AuthGuard } from './_guards/auth.guard';
 
 const routes: Routes = [
@@ -24,6 +25,7 @@ const routes: Routes = [
   { path: 'profile', component: ProfileComponent},
   { path: 'profile/:name/:realm', component: ProfileComponent},
   { path: 'refresh', component: RefreshComponent},
+  { path: 'search/:term', component: SearchResultsComponent},
   { path: '**', redirectTo: 'home', pathMatch: 'full'}
 ];
 
