@@ -8,29 +8,29 @@
 				<form #loginForm="ngForm" (ngSubmit)="login()">
 					<div class="input-group form-group">
 						<div class="input-group-prepend">
-							<div class="input-group-text"><i class="far fa-user"></i></div>
+							<div class="input-group-text"><fa-icon [icon]="faUser" class="fa-sm"></fa-icon></div>
 						</div>
 						<input type="text" class="form-control" name="username" placeholder="Username" required [(ngModel)]="model.username">
-						
+
 					</div>
 					<div class="input-group form-group">
 						<div class="input-group-prepend">
-							<div class="input-group-text"><i class="far fa-key"></i></div>
+							<div class="input-group-text"><fa-icon [icon]="faKey" class="fa-xs"></fa-icon></div>
 						</div>
 						<input type="password" class="form-control" name="password" placeholder="Password" required [(ngModel)]="model.password">
 					</div>
 					<div class="row align-items-center remember pb-2">
-						<input type="checkbox">Remember Me
+						<input type="checkbox">Remember me
 					</div>
 					<button [disabled]="!loginForm.valid" class="btn button-sign-in my-2 my-sm-0" type="submit">Login</button>
 				</form>
 			</div>
 			<div class="card-footer">
 				<div class="d-flex justify-content-center links">
-					Don't have an account?<a href="#">Sign Up</a>
+					Don't have an account?<a href="#" [routerLink]="['/register']" class="link">Sign Up</a>
 				</div>
 				<div class="d-flex justify-content-center">
-					<a href="#">Forgot your password?</a>
+					<a href="#" class="link">Forgot your password?</a>
 				</div>
 			</div>
 		</div>

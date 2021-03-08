@@ -3,3 +3,15 @@
 @import '../node_modules/font-awesome/css/font-awesome.min.css';
 @import '../node_modules/alertifyjs/build/css/alertify.min.css';
 @import '../node_modules/alertifyjs/build/css/themes/bootstrap.min.css';
+
+.link {
+  text-decoration: none;
+  color: #6CCFF6;
+  cursor: pointer;
+}
+
+.link:hover {
+  text-decoration: underline;
+  color: #6CCFF6;
+  cursor: pointer;
+}
