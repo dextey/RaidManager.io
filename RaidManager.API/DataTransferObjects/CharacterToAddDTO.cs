@@ -6,6 +6,9 @@ namespace RaidManager.API.DataTransferObjects
         public string Realm { get; set; }
         public string Region { get; set; }
 
+        public string Class { get; set; }
+        
+        
         public string FullName { get; set; }
         
         

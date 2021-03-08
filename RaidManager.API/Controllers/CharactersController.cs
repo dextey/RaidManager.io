@@ -64,6 +64,7 @@ namespace RaidManager.API.Controllers
                 Name = characterToAdd.Name,
                 Realm = characterToAdd.Realm,
                 Region = characterToAdd.Region,
+                Class = characterToAdd.Class,
                 FullName = characterToAdd.FullName,
             };
 

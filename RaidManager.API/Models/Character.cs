@@ -10,6 +10,8 @@ namespace RaidManager.API.Models
 
         public string Realm { get; set; }
 
+        public string Class { get; set; }
+        
         public string FullName { get; set; }
         
         
