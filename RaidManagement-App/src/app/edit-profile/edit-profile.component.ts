@@ -14,4 +14,7 @@ export class EditProfileComponent implements OnInit {
     this.client_id = environment.CLIENTID;
   }
 
+  openAuthPage() {
+    window.open(`https://eu.battle.net/oauth/authorize?access_type=online&client_id=${this.client_id}&redirect_uri=https%3A%2F%2Flocalhost:4200&response_type=code&state=`, "_blank");
+  }
 }
