@@ -65,7 +65,8 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "RaidManagement-App:build"
+            "browserTarget": "RaidManagement-App:build",
+            "ssl": true
           },
           "configurations": {
             "production": {

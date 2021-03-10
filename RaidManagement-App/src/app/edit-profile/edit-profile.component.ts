@@ -15,6 +15,6 @@ export class EditProfileComponent implements OnInit {
   }
 
   openAuthPage() {
-    window.open(`https://eu.battle.net/oauth/authorize?access_type=online&client_id=${this.client_id}&redirect_uri=https%3A%2F%2Flocalhost:4200&response_type=code&state=`, "_blank");
+    window.open(`https://eu.battle.net/oauth/authorize?access_type=online&response_type=code&scope=wow.profile&client_id=${this.client_id}&redirect_uri=https%3A%2F%2Flocalhost:4200/oauth`, "_blank");
   }
 }

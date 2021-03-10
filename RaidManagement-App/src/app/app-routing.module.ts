@@ -5,6 +5,7 @@ import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { OauthComponent } from './oauth/oauth.component';
 import { ProfileComponent } from './profile/profile.component';
 import { RaidOneComponent } from './raid-one/raid-one.component';
 import { RefreshComponent } from './refresh/refresh.component';
@@ -20,6 +21,7 @@ const routes: Routes = [
   { path: 'navbar', component: NavbarComponent},
   { path: 'roster', component: RosterComponent},
   { path: 'raid', component: RaidOneComponent},
+  { path: 'oauth', component: OauthComponent},
   { path: 'account', component: AccountComponent, canActivate: [AuthGuard]},
   { path: 'account/edit', component: EditProfileComponent, canActivate: [AuthGuard]},
   { path: 'profile', component: ProfileComponent},
